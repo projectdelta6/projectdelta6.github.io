@@ -2,14 +2,6 @@
 <html>
 <head>
 <title>Test Post Message</title>
-<script>
-var myJavaScriptInterface = {
-  onMessage: function(message) {
-    // Do something with the message.
-    alert(message);
-  }
-};
-</script>
 </head>
 <body>
 <button onclick="sendMessage()">Send Message</button>
@@ -17,7 +9,12 @@ var myJavaScriptInterface = {
 <script>
 function sendMessage() {
   var message = "Hello from the web page!";
-  window.parent.postMessage(message, "*");
+//   window.parent.postMessage(message, "*");
+    window
+    .webkit
+    .messageHandlers
+    .iosListener
+    .postMessage(message)
 }
 </script>
 </body>
