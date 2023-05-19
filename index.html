@@ -5,17 +5,22 @@
 </head>
 <body>
 <button onclick="sendMessage()">Send Message</button>
+<button onclick="sendiOSMessage()">Send iOS Message</button>
 
 <script>
 function sendMessage() {
   var message = "Hello from the web page!";
-  window.parent.postMessage(message, "*");
+  window.postMessage(message, "*");
+}
+function sendiOSMessage() {
+  var message = "Hello from the web page!";
+  window.webkit.messageHandlers.iOSListener.postMessage(message, "*");
 }
 
-window.addEventListener("message", function(event) {
-  var message = event.data;
-  alert(message);
-});
+// window.addEventListener("message", function(event) {
+//   var message = event.data;
+//   alert(message);
+// });
 </script>
 </body>
 </html>
