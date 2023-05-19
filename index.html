@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Test Post Message</title>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<button onclick="sendMessage()">Send Message</button>
+
+<script>
+function sendMessage() {
+  var message = "Hello from the web page!";
+  window.parent.postMessage(message, "*");
+}
+
+window.addEventListener("message", function(event) {
+  var message = event.data;
+  alert(message);
+});
+</script>
 </body>
 </html>
