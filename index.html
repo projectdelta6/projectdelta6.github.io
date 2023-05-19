@@ -2,19 +2,22 @@
 <html>
 <head>
 <title>Test Post Message</title>
+<script>
+var myJavaScriptInterface = {
+  onMessage: function(message) {
+    // Do something with the message.
+    alert(message);
+  }
+};
+</script>
 </head>
 <body>
 <button onclick="sendMessage()">Send Message</button>
-<button onclick="sendiOSMessage()">Send iOS Message</button>
 
 <script>
 function sendMessage() {
   var message = "Hello from the web page!";
-  window.parent.postMessage(message);
-}
-function sendiOSMessage() {
-  var message = "Hello from the web page!";
-  window.webkit.messageHandlers.iOSListener.postMessage(message);
+  window.parent.postMessage(message, "*");
 }
 </script>
 </body>
