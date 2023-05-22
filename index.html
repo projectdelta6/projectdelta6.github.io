@@ -8,9 +8,11 @@
 <button onclick="showAlert('Test (not from Android)')">Test Alert</button>
 
 <script>
+//This calls into the Android code to do something
 function sendMessage() {
   window.AndroidInterface.openTestActivity();
 }
+//This will be called from the Android Code
 function showAlert(message) {
     window.alert("Message from Android: "+message);
 }
