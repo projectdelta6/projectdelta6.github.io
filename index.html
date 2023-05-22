@@ -5,13 +5,13 @@
 </head>
 <body>
 <button onclick="sendMessage()">Open Native App activity</button>
-<button onclick="showAllert('Test (not from Android)')">Test Alert</button>
+<button onclick="showAlert('Test (not from Android)')">Test Alert</button>
 
 <script>
 function sendMessage() {
   window.AndroidInterface.openTestActivity();
 }
-function showAllert(message) {
+function showAlert(message) {
     window.alert("Message from Android: "+message);
 }
 </script>
