@@ -8,11 +8,7 @@
 
 <script>
 function sendMessage() {
-  window
-  .webkit
-  .messageHandlers
-  .iosListener
-  .postMessage("Hello from the Web Page!")
+  window.AndroidListener.openTestActivity()
 }
 </script>
 </body>
