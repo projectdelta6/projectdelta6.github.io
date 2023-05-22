@@ -8,13 +8,11 @@
 
 <script>
 function sendMessage() {
-  var message = "Hello from the web page!";
-//   window.parent.postMessage(message, "*");
-    window
-    .webkit
-    .messageHandlers
-    .iosListener
-    .postMessage(message)
+  window
+  .webkit
+  .messageHandlers
+  .iosListener
+  .postMessage("some message")
 }
 </script>
 </body>
